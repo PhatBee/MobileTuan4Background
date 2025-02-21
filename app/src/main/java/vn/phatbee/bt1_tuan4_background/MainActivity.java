@@ -35,13 +35,16 @@ public class MainActivity extends AppCompatActivity {
 //        ConstraintLayout bg = (ConstraintLayout) findViewById(R.id.ConstrainLayout1);
 //        bg.setBackgroundColor(Color.BLUE);
 //        bg.setBackgroundResource(R.drawable.background_intro);
+        taoHinhNgauNhien();
 
+    }
+
+    private void taoHinhNgauNhien()
+    {
         ImageView BackgroundImage = findViewById(R.id.imageButton1);
-
         // Random Background
         Random random = new Random();
         int randomIndex = random.nextInt(backgroundImages.length);
         BackgroundImage.setImageResource(backgroundImages[randomIndex]);
-
     }
 }

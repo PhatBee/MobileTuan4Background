@@ -11,14 +11,14 @@
         android:id="@+id/ConstrainLayout1"
         android:layout_width="409dp"
         android:layout_height="427dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="1dp">
 
         <ImageView
             android:id="@+id/imageButton1"
-            android:layout_width="170dp"
-            android:layout_height="193dp"
+            android:layout_width="217dp"
+            android:layout_height="254dp"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
