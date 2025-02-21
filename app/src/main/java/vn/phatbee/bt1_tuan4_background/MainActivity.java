@@ -3,6 +3,7 @@ package vn.phatbee.bt1_tuan4_background;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.Switch;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +22,13 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.pop_2, R.drawable.pop_3
     };
 
+
+    ImageView backgroundImageView;
+    Switch wallpaperSwitch;
+    int currentIndex;
+    int lastIndex;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +45,25 @@ public class MainActivity extends AppCompatActivity {
 //        bg.setBackgroundResource(R.drawable.background_intro);
         taoHinhNgauNhien();
 
+        chuyenBackground();
+
+    }
+
+    private void chuyenBackground()
+    {
+
+        backgroundImageView = findViewById(R.id.imageButton1);
+        wallpaperSwitch = findViewById(R.id.wallpaperSwitch);
+        wallpaperSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                lastIndex = currentIndex;
+                currentIndex = (currentIndex + 1) % backgroundImages.length;
+                backgroundImageView.setImageResource(backgroundImages[currentIndex]);
+            } else {
+                currentIndex = lastIndex;
+                backgroundImageView.setImageResource(backgroundImages[lastIndex]);
+            }
+        });
     }
 
     private void taoHinhNgauNhien()
@@ -46,5 +73,6 @@ public class MainActivity extends AppCompatActivity {
         Random random = new Random();
         int randomIndex = random.nextInt(backgroundImages.length);
         BackgroundImage.setImageResource(backgroundImages[randomIndex]);
+        currentIndex = randomIndex;
     }
 }
