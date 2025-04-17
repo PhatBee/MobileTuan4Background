@@ -1,5 +1,6 @@
 package vn.phatbee.bt1_tuan4_background;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -29,7 +30,8 @@ public class ImageViewActivity extends AppCompatActivity {
         img1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(ImageViewActivity.this, BackgroundLayoutActivity.class);
+                startActivity(intent);
             }
         });
     }
