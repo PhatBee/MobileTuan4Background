@@ -30,7 +30,7 @@ public class ProgressBarActivity extends AppCompatActivity {
         ImageView img2 = (ImageView) findViewById(R.id.img2);
         Button btnNext = (Button) findViewById(R.id.btnNext);
         btnNext.setOnClickListener(v -> {
-            Intent intent = new Intent(ProgressBarActivity.this, SignupActivity.class);
+            Intent intent = new Intent(ProgressBarActivity.this, SeekBarActivity.class);
             startActivity(intent);
         });
 
