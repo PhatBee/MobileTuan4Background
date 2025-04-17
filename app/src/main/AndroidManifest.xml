@@ -13,6 +13,9 @@
         android:theme="@style/Theme.BT1_Tuan4_Background"
         tools:targetApi="31">
         <activity
+            android:name=".RadioGroupActivity"
+            android:exported="false" />
+        <activity
             android:name=".CheckBoxActivity"
             android:exported="false" />
         <activity
