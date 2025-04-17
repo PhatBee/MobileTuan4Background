@@ -3,44 +3,45 @@ package vn.phatbee.bt1_tuan4_background;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.Switch;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class SwitchActivity extends AppCompatActivity {
+public class CheckBoxActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_switch);
+        setContentView(R.layout.activity_check_box);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        Switch sw = (Switch) findViewById(R.id.switch1);
+        CheckBox ck1 = (CheckBox) findViewById(R.id.checkBox);
+        ConstraintLayout bg = (ConstraintLayout) findViewById(R.id.main);
         Button btnNext = (Button) findViewById(R.id.btnNext);
-        sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        ck1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked) { //isChecked = true
-                    Toast.makeText(SwitchActivity.this, "Wifi đang bật", Toast.LENGTH_LONG).show(); }
-                else{
-                        Toast.makeText(SwitchActivity.this, "Wifi đang tắt", Toast.LENGTH_LONG).show();
-                    }
+                if (isChecked) {
+                    bg.setBackgroundResource(R.drawable.background_intro);
+                } else {
+                    bg.setBackgroundResource(R.drawable.ic_launcher_background);
                 }
+            }
         });
 
         btnNext.setOnClickListener(v -> {
-            Intent intent = new Intent(SwitchActivity.this, CheckBoxActivity.class);
+            Intent intent = new Intent(CheckBoxActivity.this, BackgroundActivity.class);
             startActivity(intent);
         });
     }
