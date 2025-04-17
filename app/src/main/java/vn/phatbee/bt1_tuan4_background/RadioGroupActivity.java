@@ -1,5 +1,6 @@
 package vn.phatbee.bt1_tuan4_background;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.RadioGroup;
@@ -29,7 +30,8 @@ public class RadioGroupActivity extends AppCompatActivity {
         ConstraintLayout bg = (ConstraintLayout) findViewById(R.id.main);
         Button btnNext = (Button) findViewById(R.id.btnNext);
         btnNext.setOnClickListener(v -> {
-            finish();
+            Intent intent = new Intent(RadioGroupActivity.this, ProgressBarActivity.class);
+            startActivity(intent);
         });
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
