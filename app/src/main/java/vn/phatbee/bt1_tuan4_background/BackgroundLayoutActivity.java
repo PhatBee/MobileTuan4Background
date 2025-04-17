@@ -40,7 +40,7 @@ public class BackgroundLayoutActivity extends AppCompatActivity {
         bg.setBackgroundResource(arrayList.get(vitri));
 
         btnNext.setOnClickListener(v -> {
-            Intent intent = new Intent(BackgroundLayoutActivity.this, BackgroundActivity.class);
+            Intent intent = new Intent(BackgroundLayoutActivity.this, SwitchActivity.class);
             startActivity(intent);
         });
     }
