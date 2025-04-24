@@ -1,10 +1,12 @@
 package vn.phatbee.bt1_tuan4_background;
 
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -29,6 +31,10 @@ public class MenuActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Button btnPopup = findViewById(R.id.btnShowPopup);
+
+        TextView txtContext = findViewById(R.id.txtContext);
+        registerForContextMenu(txtContext);
+
 
         btnPopup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +69,32 @@ public class MenuActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v,
+                                    ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        getMenuInflater().inflate(R.menu.menu_setting, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.menuSetting) {
+            Toast.makeText(this, "Bạn chọn Setting từ Context Menu", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.menuShare) {
+            Toast.makeText(this, "Bạn chọn Share từ Context Menu", Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.menuLogout) {
+            Toast.makeText(this, "Bạn chọn Logout từ Context Menu", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        return super.onContextItemSelected(item);
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
