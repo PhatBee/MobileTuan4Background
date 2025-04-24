@@ -1,5 +1,6 @@
 package vn.phatbee.bt1_tuan4_background;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -20,6 +21,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 
 public class MenuActivity extends AppCompatActivity {
+    Button btnNext;
 
 
     @Override
@@ -64,6 +66,12 @@ public class MenuActivity extends AppCompatActivity {
 
                 popupMenu.show();
             }
+        });
+
+        btnNext = findViewById(R.id.btnNext2);
+        btnNext.setOnClickListener(v -> {
+            Intent intent = new Intent(MenuActivity.this, AlertDialogActivity.class);
+            startActivity(intent);
         });
 
 
