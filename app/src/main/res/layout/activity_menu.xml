@@ -15,6 +15,22 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         android:title="My App" />
 
+
+    <Button
+        android:id="@+id/btnShowPopup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="191dp"
+        android:layout_marginEnd="125dp"
+        android:layout_marginBottom="135dp"
+        android:text="Hiện Popup Menu"
+        app:layout_constraintBottom_toTopOf="@+id/btnNext2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
     <Button
         android:id="@+id/btnNext2"
         android:layout_width="wrap_content"
