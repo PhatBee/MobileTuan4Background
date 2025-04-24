@@ -1,0 +1,21 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+<!--    &lt;!&ndash; Màu nền (solid color) &ndash;&gt;-->
+<!--    <solid android:color="#FF00FF" /> &lt;!&ndash; Màu hồng &ndash;&gt;-->
+
+    <!-- Kích thước button -->
+    <size
+        android:height="55dp"
+        android:width="200dp" />
+
+    <!-- Bo góc -->
+    <corners android:radius="30dp" />
+
+    <!-- Gradient nếu muốn hiệu ứng chuyển màu -->
+    <!-- Nếu dùng gradient, có thể bỏ solid ở trên -->
+    <gradient
+        android:startColor="#FF00FF"
+        android:endColor="#800080"
+        android:angle="45" />
+</shape>

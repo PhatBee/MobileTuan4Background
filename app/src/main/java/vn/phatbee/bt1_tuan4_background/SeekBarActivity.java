@@ -29,7 +29,7 @@ public class SeekBarActivity extends AppCompatActivity {
         SeekBar seekBar = (SeekBar) findViewById(R.id.seekBar);
         Button btnNext = (Button) findViewById(R.id.btnNext);
         btnNext.setOnClickListener(v -> {
-            Intent intent = new Intent(SeekBarActivity.this, SignupActivity.class);
+            Intent intent = new Intent(SeekBarActivity.this, DrawableShapeCustomButtonActivity.class);
             startActivity(intent);
         });
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
